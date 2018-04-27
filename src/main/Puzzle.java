@@ -9,12 +9,12 @@ public class Puzzle {
 
 	public static void main(String[] args) {
 
-		byte[] domain = hexStringToByteArray("00000f0000000000000000000000000000000000000000000000000000000000");
+		byte[] domain = hexStringToByteArray("0000f00000000000000000000000000000000000000000000000000000000000");
 		long x = 0;
 		while (true) {
 			try {
 				byte[] puzzleResult = hash(PUZZLE_ID + x);
-				if ( byteArrayToHexString(domain).compareTo(byteArrayToHexString(puzzleResult))> 0) {
+				if (byteArrayToHexString(domain).compareTo(byteArrayToHexString(puzzleResult)) > 0) {
 					System.out.println(byteArrayToHexString(puzzleResult));
 					System.out.println("Value of x that solves the puzzle : " + x);
 					break;
